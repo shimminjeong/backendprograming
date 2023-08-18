@@ -28,8 +28,7 @@ public class BoardDAO {
 //		deletePost();
 		updatePost();
 	}
-	
-	
+
 	public void selectAllPost() {
 		List<BoardVO> boardList = sqlSession.selectList("mybatis.BoardDAO.selectAll");
 		for (BoardVO board : boardList) {
@@ -52,7 +51,6 @@ public class BoardDAO {
 		sqlSession.insert("mybatis.BoardDAO.insertNewPost2", boardVO);
 		sqlSession.commit();
 	}
-	
 	
 	public void updatePost() {
 		BoardVO boardVO = new BoardVO();

@@ -51,6 +51,16 @@
 		t_board(no, title, writer,content)
 		values(seq_t_board.nextval,#{title},#{writer},#{content})
 	</insert>
+	
+	<update id="updatePost" parameterType="boardVO">
+		update t_board set content=#{content}
+		where no=#{no}
+	</update>
+	
+	<delete id="deletePost" parameterType="int">
+		delete from t_board
+		where no=#{no}	
+	</delete>
 
 
 

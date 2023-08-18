@@ -24,12 +24,9 @@ public class BoardDAO {
 //		selectbyName();
 //		selectbyName2();
 //		selectbyNo();
-//		selectbyNo2();
-//		deletePost();
-		updatePost();
+		selectbyNo2();
 	}
-	
-	
+
 	public void selectAllPost() {
 		List<BoardVO> boardList = sqlSession.selectList("mybatis.BoardDAO.selectAll");
 		for (BoardVO board : boardList) {
@@ -50,15 +47,6 @@ public class BoardDAO {
 		boardVO.setWriter("김길동");
 		boardVO.setContent("내용이요");
 		sqlSession.insert("mybatis.BoardDAO.insertNewPost2", boardVO);
-		sqlSession.commit();
-	}
-	
-	
-	public void updatePost() {
-		BoardVO boardVO = new BoardVO();
-		boardVO.setNo(8);
-		boardVO.setContent("내용 변경");
-		sqlSession.update("mybatis.BoardDAO.updatePost", boardVO);
 		sqlSession.commit();
 	}
 	
