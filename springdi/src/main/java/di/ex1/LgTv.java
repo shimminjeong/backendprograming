@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class LgTv implements Tv {
-	
+
 	private Speaker leftSpeaker;
 	private Speaker rightSpeaker;
 
@@ -14,6 +14,10 @@ public class LgTv implements Tv {
 	public LgTv(@Qualifier("abcSpeaker") Speaker leftSpeaker, @Qualifier("xyzSpeaker") Speaker rightSpeaker) {
 		this.leftSpeaker = leftSpeaker;
 		this.rightSpeaker = rightSpeaker;
+	}
+	
+	public String getBrand() {
+		return "lgtv";
 	}
 
 	public Speaker getLeftSpeaker() {
@@ -43,16 +47,17 @@ public class LgTv implements Tv {
 	}
 
 	public void printSpeakerBrand() {
-		System.out.println("left "+leftSpeaker.getSpeakerBrand()+"right "+rightSpeaker.getSpeakerBrand());
+		System.out.println("left " + leftSpeaker.getSpeakerBrand() + "right " + rightSpeaker.getSpeakerBrand());
 	}
+
 	public void volumeUp() {
 		System.out.println("tv volumneup");
-		
+
 	}
 
 	public void volumeDown() {
 		System.out.println("tv volumnedown");
-		
+
 	}
 
 }

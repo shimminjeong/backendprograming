@@ -17,17 +17,22 @@ public class ExMain {
 		AbcSpeaker abc=context.getBean("abcSpeaker",AbcSpeaker.class);
 
 
+		System.out.println(stv.getBrand());
 		stv.turnOn();
 		stv.printSpeakerBrand();
+		
 
-		System.out.println("speakerbrand : "+xyz.getSpeakerBrand());
+		System.out.println();
+		System.out.print(xyz.getSpeakerBrand());
+		System.out.println();
 		xyz.volumneUp();
 		xyz.volumneDown();
-
-		System.out.println("speakerbrand : "+abc.getSpeakerBrand());
+		System.out.println();
+		System.out.println(abc.getSpeakerBrand());
 		abc.volumneUp();
 		abc.volumneDown();
-//		stv.turnOff();
+		System.out.println();
+		stv.turnOff();
 
 	}
 
