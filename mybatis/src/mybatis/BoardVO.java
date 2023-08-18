@@ -43,6 +43,13 @@ public class BoardVO {
     public void setCount(int count) {
         this.count = count;
     }
+	@Override
+	public String toString() {
+		return "BoardVO [no=" + no + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regDate="
+				+ regDate + ", count=" + count + "]";
+	}
+    
+    
     
     
 }
