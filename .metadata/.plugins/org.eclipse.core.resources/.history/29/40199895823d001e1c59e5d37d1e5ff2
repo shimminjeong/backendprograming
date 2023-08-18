@@ -8,7 +8,7 @@
 		<result column="title" property="title" />
 		<result column="writer" property="writer" />
 		<result column="no" property="no" />
-		<result column="reg_date" property="regDate" />
+		<result column="reg_date" property="regdate" />
 		<result column="count" property="count" />
 		<result column="content" property="content" />
 	</resultMap>

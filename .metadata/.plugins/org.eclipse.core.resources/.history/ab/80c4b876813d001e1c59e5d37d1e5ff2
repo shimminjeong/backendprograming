@@ -3,15 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.BoardDAO">
-	<resultMap type="mybatis.BoardVO" id="boardMap">
-		<!-- <result column=db이름 property=vo이름> -->
-		<result column="title" property="title" />
-		<result column="writer" property="writer" />
-		<result column="no" property="no" />
-		<result column="reg_date" property="regDate" />
-		<result column="count" property="count" />
-		<result column="content" property="content" />
-	</resultMap>
+
 
 	<select id="selectAll" resultType="boardVO">
 		select * from t_board
@@ -19,19 +11,18 @@
 		no
 	</select>
 
-	<select id="selectbyName2" parameterType="String" resultMap="boardMap">
+	<select id="selectbyName2" parameterType="boardVO" resultType="boardVO">
 		select * from t_board
 		where writer=#{name}
 	</select>
-
-	<select id="selectbyName" parameterType="boardVO" resultType="boardVO">
-		select * from t_board
+	
+	<select id="selectbyName" parameterType="String" resultType="boardVO">
+		select no, title, writer, content, reg_date as regDate, count from t_board
 		where writer=#{writer}
 	</select>
-
+	
 	<select id="selectbyNo" parameterType="int" resultType="boardVO">
-		select *
-		from t_board
+		select * from t_board
 		where NO=#{no}
 	</select>
 

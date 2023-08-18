@@ -20,8 +20,8 @@ public class BoardDAO {
 //		insertNewPost();
 //		selectAllPost();
 //		selectbyName();
-		selectbyName2();
-//		selectbyNo();
+//		selectbyName2();
+		selectbyNo();
 	}
 
 	public void selectAllPost() {
@@ -70,7 +70,6 @@ public class BoardDAO {
 			System.out.println("Board NO: " + board.getWriter());
 			System.out.println("Title: " + board.getTitle());
 			System.out.println("Content: " + board.getContent());
-			System.out.println("regdate: " + board.getRegDate());
 			// ... 다른 멤버 변수 출력
 			System.out.println("-------------------------------------");
 		}

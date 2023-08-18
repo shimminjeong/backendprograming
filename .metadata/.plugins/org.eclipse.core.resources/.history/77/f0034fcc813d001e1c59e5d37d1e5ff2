@@ -8,7 +8,7 @@
 		<result column="title" property="title" />
 		<result column="writer" property="writer" />
 		<result column="no" property="no" />
-		<result column="reg_date" property="regDate" />
+		<result column="reg_date" property="regdate" />
 		<result column="count" property="count" />
 		<result column="content" property="content" />
 	</resultMap>
@@ -19,13 +19,16 @@
 		no
 	</select>
 
-	<select id="selectbyName2" parameterType="String" resultMap="boardMap">
+	<select id="selectbyName2" parameterType="boardVO"
+		resultType="boardVO">
 		select * from t_board
 		where writer=#{name}
 	</select>
 
-	<select id="selectbyName" parameterType="boardVO" resultType="boardVO">
-		select * from t_board
+	<select id="selectbyName" parameterType="String"
+		resultType="boardVO">
+		select no, title, writer, content, reg_date as regDate,
+		count from t_board
 		where writer=#{writer}
 	</select>
 
