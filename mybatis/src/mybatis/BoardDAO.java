@@ -1,6 +1,8 @@
 package mybatis;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -20,8 +22,9 @@ public class BoardDAO {
 //		insertNewPost();
 //		selectAllPost();
 //		selectbyName();
-		selectbyName2();
+//		selectbyName2();
 //		selectbyNo();
+		selectbyNo2();
 	}
 
 	public void selectAllPost() {
@@ -87,6 +90,16 @@ public class BoardDAO {
 			System.out.println("regdate: " + board.getRegDate());
 			// ... 다른 멤버 변수 출력
 			System.out.println("-------------------------------------");
+		}
+	}
+	
+	public void selectbyNo2() {
+		//map을 resultType으로 준다.
+		int no = 10;
+		Map<String,Object> map = sqlSession.selectOne("mybatis.BoardDAO.selectbyNo2", no);
+		Set<String> keyset=map.keySet(); //{no,title,writer,}
+		for (String key:keyset) {
+			System.out.println(key + ": "+map.get(key));
 		}
 	}
 

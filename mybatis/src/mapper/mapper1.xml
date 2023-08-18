@@ -34,6 +34,12 @@
 		from t_board
 		where NO=#{no}
 	</select>
+	
+	<select id="selectbyNo2" parameterType="int" resultType="map">
+		select *
+		from t_board
+		where NO = #{no}
+	</select>
 
 	<insert id="insertNewPost">
 		insert into t_board(no, title, writer,content)
