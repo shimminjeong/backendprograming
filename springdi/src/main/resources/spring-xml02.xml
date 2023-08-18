@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- Car car =new Car(); KumhoTire kumhoTire=new KumhoTire car.setTire(kumhoTire") -->
+	<bean id="car" class="di.xml02.Car"> <!-- 빈생성자호출 -->
+		<property name="tire" ref="hankookTire"></property> <!-- tire의 setter에 hankkoktire넣는것 -->
+		<property name="carName" value="genesis"></property>
+		<property name="year" value="2022"></property>
+		<property name="stire" ref="kumhoTire"></property>
+	</bean>
+	
+	
+	<bean id="hankookTire" class="di.xml02.HankookTire" />
+	<bean id="kumhoTire" class="di.xml02.KumhoTire" />
+
+
+
+
+</beans>
