@@ -1,8 +1,7 @@
-package di.ex2;
+package di.ex2_2;
 
 import org.springframework.stereotype.Component;
 
-@Component("subCalculator")
 public class SubCalculator implements Calculator {
 
 	@Override

@@ -1,4 +1,4 @@
-package di.ex1;
+package di.ex1_5;
 
 public interface Speaker {
 	

@@ -1,9 +1,9 @@
-package di.ex1;
+package di.ex1_5;
 
 import org.springframework.stereotype.Component;
 
-@Component("abcSpeaker")
-public class AbcSpeaker implements Speaker {
+@Component("xyzSpeaker")
+public class XyzSpeaker implements Speaker {
 
 	public void volumneUp() {
 		System.out.println("speaker volumneUp");
@@ -16,7 +16,8 @@ public class AbcSpeaker implements Speaker {
 
 
 	public String getSpeakerBrand() {
-		return "ABC speaker";
+		// TODO Auto-generated method stub
+		return "XYZ speaker";
 	}
 
 }

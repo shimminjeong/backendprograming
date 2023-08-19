@@ -1,9 +1,9 @@
-package di.ex1;
+package di.ex2_5;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-@ComponentScan(basePackages= {"di.ex1"})
+@ComponentScan(basePackages= {"di.ex2_5"})
 @Configuration
 public class Config {
 

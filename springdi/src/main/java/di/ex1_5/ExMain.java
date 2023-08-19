@@ -1,8 +1,9 @@
-package di.ex1;
+package di.ex1_5;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import di.ex1.Config;
+
+import di.ex1_5.Config;
 
 public class ExMain {
 

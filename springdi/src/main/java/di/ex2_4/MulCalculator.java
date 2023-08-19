@@ -1,4 +1,4 @@
-package di.ex2;
+package di.ex2_4;
 
 import org.springframework.stereotype.Component;
 
