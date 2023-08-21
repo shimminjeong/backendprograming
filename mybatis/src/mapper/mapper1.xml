@@ -67,15 +67,51 @@
 
 
 	<!-- dynamic -->
-	<select id="selectDSQL" parameterType="boardVO" resultMap="boardMap">
+	<select id="selectDSQL" parameterType="boardVO"
+		resultMap="boardMap">
 		select * from t_board
 		<where>
 			<if test="writer != null">
-			writer=#{writer}
+				writer=#{writer}
 			</if>
 			<if test="title != null">
-			AND title=#{title}</if>
+				AND title=#{title}
+			</if>
 		</where>
+	</select>
+
+	<!-- parameterType은 안넣어도됨 -->
+	<select id="selectDSQLif1" parameterType="String"
+		resultType="boardVO">
+		select * from t_board
+		<if test="title != null">
+			<where> title=#{title}</where> <!-- where title=#{title} -->
+		</if>
+	</select>
+
+	<select id="selectDSQLif2" parameterType="boardVO"
+		resultType="boardVO">
+		select * from t_board
+		<if test="title != null">
+			<where> title=#{title}</where> <!-- where title=#{title} -->
+		</if>
+	</select>
+
+	<!-- array -->
+	<select id="selectDforeach1" parameterType="int[]"
+		resultType="boardVO">
+		select * from t_board
+		where no in
+		<foreach collection="array" item="abc" separator="," open="("
+			close=")"> #{abc}</foreach>
+	</select>
+	
+	<select id="selectDforeach2" parameterType="boardVO"
+		resultType="boardVO">
+		select * from t_board
+		where no in
+		<foreach collection="numbers" item="abc" separator="," open="("
+			close=")"> #{abc}</foreach>
 	</select>
 
 

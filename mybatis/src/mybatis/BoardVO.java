@@ -7,7 +7,17 @@ public class BoardVO {
     private String content;
     private String regDate;
     private int count;
-    public int getNo() {
+    private int[] numbers;
+    
+    
+    
+    public int[] getNumbers() {
+		return numbers;
+	}
+	public void setNumbers(int[] numbers) {
+		this.numbers = numbers;
+	}
+	public int getNo() {
         return no;
     }
     public void setNo(int no) {
