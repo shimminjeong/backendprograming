@@ -14,6 +14,8 @@ public class HelloController {
 	public ModelAndView hello() {
 		
 		ModelAndView mav = new ModelAndView("hello/hello");
+		mav.addObject("msg", "HelloWorld");
+		
 		// view -> jsp file
 		// WEB-INF/jsp/hello/hello.jsp
 		// WEB-INF/jsp/ + value + .jsp   viewResolve가

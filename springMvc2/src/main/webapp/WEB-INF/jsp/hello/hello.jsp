@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>hello.jsp입니다.</h1>
+<h2>welcome message = ${msg}</h2>
 </body>
 </html>
