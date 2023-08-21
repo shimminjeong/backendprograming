@@ -17,6 +17,15 @@
 		order by
 		no
 	</select>
+	
+	<!-- like where wirter like '%길%' -->
+	<select id="selectbyName3" parameterType="String"
+		resultMap="boardMap">
+		select * from t_board
+		where writer like '$%{writer}%'
+	</select>
+	
+	
 
 	<select id="selectbyName2" parameterType="String"
 		resultMap="boardMap">
