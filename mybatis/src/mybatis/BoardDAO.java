@@ -24,14 +24,14 @@ public class BoardDAO {
 //		selectbyName();
 //		selectbyName2();
 //		selectbyNo();
-//		selectbyNo2();
+		selectbyNo2();
 //		deletePost();
 //		updatePost();
 //		selectDynamicSQL();
 //		selectDynamicSQLif1();
 //		selectDynamicSQLif2();
 //		selectDforeach1();
-		selectDforeach2();
+//		selectDforeach2();
 	}
 
 ////////////////////	dynamicsql
@@ -175,7 +175,7 @@ public class BoardDAO {
 
 	public void selectbyNo2() {
 		// map을 resultType으로 준다.
-		int no = 10;
+		int no = 9;
 		Map<String, Object> map = sqlSession.selectOne("mybatis.BoardDAO.selectbyNo2", no);
 		Set<String> keyset = map.keySet(); // {no,title,writer,}
 		for (String key : keyset) {
