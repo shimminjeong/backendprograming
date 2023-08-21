@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="di.ex2.AddCalculator"/>
+    <fullyQualifiedTypeName name="di.ex2.MyCalculator"/>
+    <fullyQualifiedTypeName name="di.ex2.Calculator"/>
+    <fullyQualifiedTypeName name="mybatis.BoardVO"/>
+</qualifiedTypeNameHistroy>
