@@ -16,14 +16,40 @@ public class MemberController {
 		//WEB-INF/jsp/member/joinForm.jsp
 	}
 	
-	@PostMapping("/member/join")
-	public String join(HttpServletRequest request, @RequestParam("id") String id2,@RequestParam("password") String password2) {
+//	@PostMapping("/member/join")
+	public String join(HttpServletRequest request) {
+		String id=request.getParameter("id");
+		String password=request.getParameter("password");
+		
+		MemberVO member=new MemberVO();
+		member.setId(id);
+		member.setPassword(password);
+		request.setAttribute("member", member);
+		return "member/memberInfo";
+	}
+	
+//	@PostMapping("/member/join")
+	public String join2(HttpServletRequest request, @RequestParam("id") String id2,@RequestParam("password") String password2) {
 //		String id=request.getParameter("id");
 //		String password=request.getParameter("password");
 		
 		MemberVO member=new MemberVO();
 		member.setId(id2);
 		member.setPassword(password2);
+		request.setAttribute("member", member);
+		return "member/memberInfo";
+	}
+	
+	
+//	@RequestParam("name") name 동일하다면 @RequestParam 생략가능
+	@PostMapping("/member/join")
+	public String join3(HttpServletRequest request, String id, String password) {
+//		String id=request.getParameter("id");
+//		String password=request.getParameter("password");
+		
+		MemberVO member=new MemberVO();
+		member.setId(id);
+		member.setPassword(password);
 		request.setAttribute("member", member);
 		return "member/memberInfo";
 	}
