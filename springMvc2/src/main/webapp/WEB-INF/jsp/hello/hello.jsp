@@ -9,5 +9,6 @@
 <body>
 <h1>hello.jsp입니다.</h1>
 <h2>welcome message = ${msg}</h2>
+<h2>no = ${no}</h2>
 </body>
 </html>
