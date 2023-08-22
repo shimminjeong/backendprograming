@@ -11,6 +11,7 @@
 <a href="<%=request.getContextPath()%>/hello/hello">HelloController</a>
 <a href="${pageContext.request.contextPath}/hello/hello">HelloController</a>
 <a href="${pageContext.request.contextPath}/method/method">method/method</a>
+<a href="${pageContext.request.contextPath}/member/joinForm">회원가입</a> <!-- url요청 -->
 <br>
 <br>
 <h2>request.uri - springmvc/hello/hello</h2>
