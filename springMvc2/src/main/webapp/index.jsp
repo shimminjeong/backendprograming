@@ -14,7 +14,9 @@
 <a href="${pageContext.request.contextPath}/member/joinForm">회원가입</a> <!-- url요청 -->
 <a href="${pageContext.request.contextPath}/stringresponse">스트링response</a> <!-- url요청 -->
 <a href="${pageContext.request.contextPath}/voresponse">memberVOresponseBody</a> <!-- url요청 -->
-<a href="${pageContext.request.contextPath}/hello/3">requestMapping</a> <!-- url요청 -->
+<a href="${pageContext.request.contextPath}/hello/3">pathVariable</a> <!-- url요청 -->
+<a href="${pageContext.request.contextPath}/file/upload">FileUpload</a> <!-- url요청 -->
+<br>
 <br>
 <br>
 <h2>request.uri - springmvc/hello/hello</h2>
