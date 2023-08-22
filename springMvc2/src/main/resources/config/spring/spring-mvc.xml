@@ -14,7 +14,7 @@
 		base-package="kr.ac.kopo" />
 
 	<!-- getmapping안해도 handler할 수 있다, -->
-	<mvc:view-controller path="/file/upload"
+	<mvc:view-controller path="/file/uploadform"
 		view-name="file/fileUploadForm" />
 	<mvc:annotation-driven>
 		<mvc:message-converters>
