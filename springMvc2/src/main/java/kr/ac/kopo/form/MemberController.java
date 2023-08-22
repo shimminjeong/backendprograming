@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MemberController {
@@ -63,10 +64,20 @@ public class MemberController {
 	}
 	
 //	꼭 변수명을 달리 쓰고 싶으면 ModelAttribute
-	@PostMapping("/member/join")
+//	@PostMapping("/member/join")
 	public String join5(@ModelAttribute("member") MemberVO member) {
 
 		return "member/memberInfo";
+	}
+	
+	@PostMapping("/member/join")
+	public ModelAndView join6(MemberVO member) {
+//		ModelAndView mav=new ModelAndView();
+//		mav.setViewName("member/memberInfo");
+		ModelAndView mav=new ModelAndView("member/memberInfo");
+		mav.addObject("member",member);
+		return mav;
+
 	}
 
 }
