@@ -66,9 +66,9 @@ public class MemberController {
 //	꼭 변수명을 달리 쓰고 싶으면 ModelAttribute
 //	@PostMapping("/member/join")
 	public String join5(@ModelAttribute("member") MemberVO member) {
-
 		return "member/memberInfo";
 	}
+	
 	
 	@PostMapping("/member/join")
 	public ModelAndView join6(MemberVO member) {
