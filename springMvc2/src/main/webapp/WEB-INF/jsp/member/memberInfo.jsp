@@ -8,7 +8,10 @@
 </head>
 <body>
 <h1>회원가입을 완료했습니다.</h1>
-${member.id}
-${member.password}
+id는 ${member.id} <br>
+password는 ${member.password}<br>
+-----------ㅡ<br>
+id는 ${memberVO.id}<br>
+password는 ${memberVO.password}<br>
 </body>
 </html>
