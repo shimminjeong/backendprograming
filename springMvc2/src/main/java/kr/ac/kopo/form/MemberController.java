@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -55,8 +56,15 @@ public class MemberController {
 	}
 
 //	따로 등록하지 않고 그냥 memberInfo에서 memberVO.id를 하면 사용가능(매우 편리)
-	@PostMapping("/member/join")
+//	@PostMapping("/member/join")
 	public String join4(MemberVO member) {
+
+		return "member/memberInfo";
+	}
+	
+//	꼭 변수명을 달리 쓰고 싶으면 ModelAttribute
+	@PostMapping("/member/join")
+	public String join5(@ModelAttribute("member") MemberVO member) {
 
 		return "member/memberInfo";
 	}
