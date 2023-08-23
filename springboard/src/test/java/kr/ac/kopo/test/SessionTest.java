@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import kr.ac.kopo.board.service.BoardServiceImpl;
 import kr.ac.kopo.board.vo.BoardVO;
 
 @ContextConfiguration(locations = { "classpath:config/spring/spring-config.xml" })
@@ -21,6 +22,17 @@ public class SessionTest {
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
 
+	@Autowired
+	private BoardServiceImpl boardServiceImpl;
+
+	@Test
+	public void BoardServiceTest() {
+		List<BoardVO> boardlist = boardServiceImpl.getAllBoard();
+		for (BoardVO boardVO: boardlist) {
+			System.out.println(boardVO);
+		}
+	}
+
 	@Ignore
 	@Test
 	public void sessionTemplataTest() {
@@ -29,17 +41,13 @@ public class SessionTest {
 
 	}
 
+	@Ignore
 	@Test
 	public void boardSelectAllTest() {
 		List<BoardVO> boardlist = sqlSessionTemplate.selectList("springboard.board.dao.BoardDAO.selectAll");
 		for (BoardVO boardVO : boardlist) {
 			System.out.println(boardVO);
 		}
-	}
-
-	@Test
-	public void sessionTemplateTest2() {
-//		List<MemberVO> boardlist=sqlSessionTemplate.selectList("name)
 	}
 
 }
