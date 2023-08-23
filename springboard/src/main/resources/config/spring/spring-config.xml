@@ -47,6 +47,7 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="configLocation"
 			value="classpath:config/mybatis/mybatis-config.xml"></property>
+			<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
 	</bean>
 
 	<bean id="sqlSessionTemplate"
