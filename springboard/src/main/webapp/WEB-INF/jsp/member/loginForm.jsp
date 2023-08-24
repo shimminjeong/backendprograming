@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	if('${msg}')
+		alert('${msg}')
+	
+</script>
 </head>
 <body>
 	<h1>로그인하세요</h1>
