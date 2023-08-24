@@ -9,10 +9,11 @@
 </head>
 <body>
 	<h1>로그인하세요</h1>
-	<form action="${pageContext.request.contextPath}/login" method="post">
-		ID : <input type="text" name="id"><br> PASSWORD : <input
-			type="text" name="password"> <input type="submit"
-			value="로그인">
-	</form>
+	<form:form action="${pageContext.request.contextPath}/login"
+		method="post" modelAttribute="loginVO">
+		ID : <form:input path="id"/><form:errors path="id" /><br>
+		PASSWORD : <form:input path="password"/><form:errors path="password"/><br>
+				<input type="submit" value="로그인">
+	</form:form>
 </body>
 </html>

@@ -19,6 +19,6 @@ public class MemberDAOImple implements MemberDAO {
 		//1개만 가져오니까 selectOne
 		MemberVO memberVO = sqlSessionTemplate.selectOne("springboard.member.dao.MemberDAO.login", loginVO);
 		return memberVO;
-	}
+	}  
 
 }
