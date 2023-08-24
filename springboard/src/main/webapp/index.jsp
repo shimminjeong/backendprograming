@@ -10,5 +10,6 @@
 welcome
 <a href="${pageContext.request.contextPath}/board">게시판</a>
 <a href="${pageContext.request.contextPath}/board/new">새글쓰기</a>
+<a href="${pageContext.request.contextPath}/login">로그인</a>
 </body>
 </html>

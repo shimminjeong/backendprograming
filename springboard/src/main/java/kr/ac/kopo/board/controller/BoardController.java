@@ -45,7 +45,7 @@ public class BoardController {
 		}else {
 			System.out.println("error가 없습니다.");
 			boardService.writeNewPost(boardVO);
-			return "redirect:/board";
+			return "redirect:/board"; //jsp아님
 			// http://localhost:8080/springboard/board
 		}
 		
@@ -77,4 +77,6 @@ public class BoardController {
 		mav.addObject("boardlist", boardlist);
 		return mav;
 	}
+	
+	
 }
