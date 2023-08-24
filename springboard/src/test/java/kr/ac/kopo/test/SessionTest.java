@@ -24,7 +24,17 @@ public class SessionTest {
 
 	@Autowired
 	private BoardServiceImpl boardServiceImpl;
-
+	
+	
+	
+	
+	@Test
+	public void selectByNoTest() {
+		BoardVO board = sqlSessionTemplate.selectOne("springboard.board.dao.BoardDAO.selectbyNo",5);
+			System.out.println(board);
+	}
+	
+	@Ignore
 	@Test
 	public void BoardServiceTest() {
 		List<BoardVO> boardlist = boardServiceImpl.getAllBoard();
@@ -49,5 +59,7 @@ public class SessionTest {
 			System.out.println(boardVO);
 		}
 	}
+	
+	
 
 }

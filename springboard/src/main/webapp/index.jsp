@@ -9,5 +9,6 @@
 <body>
 welcome
 <a href="${pageContext.request.contextPath}/board">게시판</a>
+<a href="${pageContext.request.contextPath}/board/new">새글쓰기</a>
 </body>
 </html>

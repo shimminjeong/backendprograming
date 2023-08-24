@@ -7,4 +7,8 @@ import kr.ac.kopo.board.vo.BoardVO;
 public interface BoardDAO {
 	List<BoardVO> getAllPost();
 
+	BoardVO getPostByNo(int no);
+
+	void writeNewPost(BoardVO boardVO);
+
 }

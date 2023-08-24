@@ -21,4 +21,16 @@ public class BoardDAOImple implements BoardDAO {
 		return boardlist;
 	}
 
+	@Override
+	public BoardVO getPostByNo(int no) {
+		BoardVO boardVO = sqlSessionTemplate.selectOne("springboard.board.dao.BoardDAO.selectbyNo",no);
+		return boardVO;
+	}
+
+	@Override
+	public void writeNewPost(BoardVO boardVO) {
+		sqlSessionTemplate.insert("springboard.board.dao.BoardDAO.insert",boardVO);
+		
+	}
+
 }
