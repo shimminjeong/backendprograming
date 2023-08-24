@@ -6,6 +6,8 @@ import kr.ac.kopo.member.vo.MemberVO;
 public interface MemberDAO {
 
 	MemberVO login(LoginVO loginVO);
+	
+	void join(MemberVO memberVO);
 
 
 }
