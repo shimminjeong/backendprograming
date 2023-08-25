@@ -18,6 +18,9 @@ public class LoginInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		
+		HttpSession session = request.getSession();
+		MemberVO memberVO = (MemberVO) session.getAttribute("currentUser");
+		
 		//로그인 끝나면 request.getServletPath()) 여기로 다시 가
 		System.out.println("handelr : "+handler);
 		System.out.println("request.getContextPath() : "+request.getContextPath());
@@ -27,8 +30,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		
 		
 		
-		HttpSession session = request.getSession();
-		MemberVO memberVO = (MemberVO) session.getAttribute("currentUser");
+		
 		System.out.println("preHandle - 로그인 체크 동작입니다.");
 		if (memberVO == null) { // 로그인 안했으면
 			System.out.println("memberVO is null");

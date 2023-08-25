@@ -59,11 +59,15 @@
 	<!-- interceptors설정 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/**/"/>
-			<mvc:exclude-mapping path="/login"/>
-			<mvc:exclude-mapping path="/board"/> <!-- uri -->
+			<mvc:mapping path="/**/"/><!-- 모든파일 -->
+			<!-- <mvc:exclude-mapping path="/login"/>
+			<mvc:exclude-mapping path="/board"/> uri
 			<mvc:exclude-mapping path="/resources/**"/>
-			<ref bean="loginInterceptor"/>
+			<ref bean="loginInterceptor"/> -->
+			<mvc:exclude-mapping path="/login"/>
+			<mvc:exclude-mapping path="/board"/>
+			<mvc:exclude-mapping path="/resource/**"/>
+			<ref bean="testInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
 
