@@ -20,7 +20,7 @@ import kr.ac.kopo.member.service.MemberService;
 import kr.ac.kopo.member.vo.LoginVO;
 import kr.ac.kopo.member.vo.MemberVO;
 
-@SessionAttributes("currentUser")
+//@SessionAttributes("currentUser")
 @Controller
 public class MemberController {
 
@@ -50,32 +50,32 @@ public class MemberController {
 			} else {
 				System.out.println("login이 완료되었습니다.");
 				// 세션 등록 jsp ${currentUser}
-//				1) session.setAttribute("currentUser", memberVO);
+				session.setAttribute("currentUser", memberVO);
 //				2) @SessionAttributes("currentUser")를 class명 위에 설정
-				model.addAttribute("currentUser", memberVO);
-				return "redirect:/board";
+//				model.addAttribute("currentUser", memberVO);
+				return "redirect:/";
 				// http://localhost:8080/springboard/board
 			}
 		}
 	}
 
-//	@GetMapping("/logout")
-//	public String logout(HttpSession session) {
-////		session.setAttribute("currentUser", memberVO);
-////		session.removeAttribute("currentUser");
-//		session.invalidate(); // setAttribute와 pair (@SessionAttributes("currentUser")에서는 작동하지 않음
-////		"index" WEB-INF/jsp/index.jsp (x)
-////		webapp/index.jsp
-//		// http://localhost:8080/springboard/
-//		return "redirect:/";
-//	}
-
 	@GetMapping("/logout")
-	public String logout2(SessionStatus sessionStatus) {
-//		session.invalidate(); //setAttribute와 pair에서는 작동하지 않음
-		sessionStatus.setComplete(); // @SessionAttributes에 등록되어 있는 변수들
+	public String logout(HttpSession session) {
+//		session.setAttribute("currentUser", memberVO);
+//		session.removeAttribute("currentUser");
+		session.invalidate(); // setAttribute와 pair (@SessionAttributes("currentUser")에서는 작동하지 않음
+//		"index" WEB-INF/jsp/index.jsp (x)
+//		webapp/index.jsp
+		// http://localhost:8080/springboard/
 		return "redirect:/";
 	}
+
+//	@GetMapping("/logout")
+//	public String logout2(SessionStatus sessionStatus) {
+////		session.invalidate(); //setAttribute와 pair에서는 작동하지 않음
+//		sessionStatus.setComplete(); // @SessionAttributes에 등록되어 있는 변수들
+//		return "redirect:/";
+//	}
 
 	@GetMapping("/join")
 	public String joinForm(Model model) {
