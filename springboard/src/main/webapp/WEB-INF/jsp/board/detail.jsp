@@ -7,14 +7,32 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script type="text/javascript">
-	${document}.ready(function() {
+	$(document).ready(function() {
 		$('#replyAddBtn').click(function() {
-			alert('클릭성공'))
-			
-		});
-		
-	});
+			/* alert('클릭성공') */
+			let replyContent=document.replyForm.content.value;
+			let replyWriter=document.replyForm.writer.value;
 
+			$.ajax({
+				url : '${pageContext.request.contextPath}/reply',
+				method : 'POST',
+				data : {
+					boardNo: ${boardVO.no},
+						writer:replyContent,
+						content:replyContent
+				},
+				success : function(){
+					alert('insert성공')
+				},
+				error : function(){
+					alert('insert실패')
+				}
+			
+			})
+			
+		})
+		
+	})
 
 </script>
 </head>
@@ -69,10 +87,10 @@
 			onclick="location.href='${pageContext.request.contextPath}/'">
 	</div>
 	<div>
-		<form>
-			댓글 : <input type="text" size="80" anme="content"> 
-			작성자 : <input type="text" size="20" anme="writer"> 
-			<input type="button" value="댓글쓰기" id="replyAddBtn">
+		<form name="replyForm">
+			댓글 : <input type="text" size="80" name="content"> 작성자 : <input
+				type="text" size="20" name="writer"> <input type="button"
+				value="댓글쓰기" id="replyAddBtn">
 		</form>
 
 	</div>

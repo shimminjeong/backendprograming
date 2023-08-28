@@ -12,7 +12,6 @@ public class ReplyServiceImpl implements ReplyService{
 	@Autowired
 	private ReplyDAO replyDAO;
 	
-
 	@Override
 	public void insertReply(ReplyVO replyVO) {
 		replyDAO.insertReply(replyVO);		

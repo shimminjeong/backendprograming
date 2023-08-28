@@ -17,6 +17,9 @@ public class ReplyController {
 	@ResponseBody //를 붙여야해 아님 return "reply.jsp"를 찾으려고한다.
 	@PostMapping("/reply")
 	public void writeReply(ReplyVO replyVO) {
+		System.out.println("replyVO"+replyVO.getBoardNo());
+		System.out.println("replyVO"+replyVO.getContent());
+		System.out.println("replyVO"+replyVO.getWriter());
 		replyService.insertReply(replyVO);
 		
 	}
