@@ -54,9 +54,6 @@ public class MemberController {
 //				2) @SessionAttributes("currentUser")를 class명 위에 설정
 //				model.addAttribute("currentUser", memberVO);
 
-//				***********************8
-				// 수정 필요, redirect. 주소 수정 필요
-//				***********************8
 
 				String dest = (String) session.getAttribute("dest");
 				session.removeAttribute("dest");

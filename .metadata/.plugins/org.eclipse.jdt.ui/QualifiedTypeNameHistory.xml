@@ -5,7 +5,6 @@
     <fullyQualifiedTypeName name="di.ex2.MyCalculator"/>
     <fullyQualifiedTypeName name="di.ex2.Calculator"/>
     <fullyQualifiedTypeName name="mybatis.BoardVO"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
     <fullyQualifiedTypeName name="kr.ac.kopo.form.MemberVO"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
@@ -20,7 +19,6 @@
     <fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
     <fullyQualifiedTypeName name="kr.ac.kopo.board.vo.BoardVO"/>
     <fullyQualifiedTypeName name="org.hibernate.validator.constraints.NotEmpty"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="kr.ac.kopo.board.vo.MemberVO"/>
@@ -29,4 +27,12 @@
     <fullyQualifiedTypeName name="kr.ac.kopo.member.vo.LoginVO"/>
     <fullyQualifiedTypeName name="kr.ac.kopo.member.vo.MemberVO"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.NotEmpty"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="java.lang.ProcessBuilder.Redirect"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.SessionAttributes"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.support.SessionStatus"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.HandlerInterceptor"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>
