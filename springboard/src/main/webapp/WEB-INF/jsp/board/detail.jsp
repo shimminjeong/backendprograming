@@ -7,7 +7,42 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script type="text/javascript">
+	function showReplyList(){
+		$.ajax({
+			url : '${pageContext.request.contextPath}/reply/${boardVO.no}',
+			method : 'GET',
+			success : function(data){ //ReplyVO list
+				alert('showReplyList 성공')
+				console.log(data)
+				console.log(typeof data)
+				$('#replyList').empty();
+				//#replyList에 보여줄것
+				$(data).each(function(){
+					str='<hr>';
+					str+='<strong>'+this.content+'</strong>';
+					str+='&nbsp;'+this.writer+'&nbsp;';
+					str+='&nbsp;'+this.regDate+'&nbsp;';
+					str+='<button class="delBtn" id='+this.no+'>삭제</button>';
+					console.log("str",str)
+					$('#replyList').append(str)
+					
+				})
+				
+			},
+			error : function(){
+				alert('showReplyList 실패')
+			}
+		})
+	}
+	
 	$(document).ready(function() {
+		
+		showReplyList();
+		
+		$(document).on('click','.delBtn',function(){
+			alert("쉬는시간")
+		})
+		
 		$('#replyAddBtn').click(function() {
 			/* alert('클릭성공') */
 			let replyContent=document.replyForm.content.value;
@@ -25,6 +60,7 @@
 					alert('insert성공')
 					document.replyForm.content.value="";
 					document.replyForm.writer.value="";
+					showReplyList();
 				},
 				error : function(){
 					alert('insert실패')
@@ -56,6 +92,10 @@
 	</c:if>
 	<div align="center">
 		<table border="1">
+			<tr>
+				<th>번호</th>
+				<td>${boardVO.no}</td>
+			</tr>
 			<tr>
 				<th>번호</th>
 				<td>${boardVO.no}</td>
@@ -96,5 +136,7 @@
 		</form>
 
 	</div>
+	<div id="replyList"></div>
+
 </body>
 </html>
