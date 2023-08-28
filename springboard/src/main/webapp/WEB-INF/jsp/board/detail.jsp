@@ -12,7 +12,6 @@
 			url : '${pageContext.request.contextPath}/reply/${boardVO.no}',
 			method : 'GET',
 			success : function(data){ //ReplyVO list
-				alert('showReplyList 성공')
 				console.log(data)
 				console.log(typeof data)
 				$('#replyList').empty();
@@ -25,9 +24,7 @@
 					str+='<button class="delBtn" id='+this.no+'>삭제</button>';
 					console.log("str",str)
 					$('#replyList').append(str)
-					
 				})
-				
 			},
 			error : function(){
 				alert('showReplyList 실패')
@@ -40,7 +37,17 @@
 		showReplyList();
 		
 		$(document).on('click','.delBtn',function(){
-			alert("쉬는시간")
+			let replyNo=$(this).attr('id');
+			$.ajax({
+				url : '${pageContext.request.contextPath}/reply/'+replyNo,
+				method : 'delete',
+				success : function(){
+					alert('delete 성공')
+				},
+				error : function(){
+					alert('delete 실패')
+				}
+			})
 		})
 		
 		$('#replyAddBtn').click(function() {

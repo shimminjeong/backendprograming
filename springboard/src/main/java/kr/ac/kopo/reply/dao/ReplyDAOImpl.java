@@ -24,4 +24,11 @@ public class ReplyDAOImpl implements ReplyDAO {
 		List<ReplyVO> replylist=sqlSessionTemplate.selectList("springboard.replyDAO.selectByBoardNo",bno);
 		return replylist;
 	}
+
+	@Override
+	public void deleteReplyByNo(int replyNo) {
+		sqlSessionTemplate.delete("springboard.replyDAO.deleteReplyByNo", replyNo);
+
+		
+	}
 }

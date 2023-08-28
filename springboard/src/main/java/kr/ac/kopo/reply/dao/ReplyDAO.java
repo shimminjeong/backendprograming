@@ -9,5 +9,7 @@ public interface ReplyDAO {
 	void insertReply(ReplyVO replyVO);
 	
 	List<ReplyVO> getReplyBoardNo(int bno);
+	
+	void deleteReplyByNo(int replyNo);
 
 }
