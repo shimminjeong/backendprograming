@@ -40,10 +40,12 @@ public class ReplyController {
 	}
 	
 	
-	@DeleteMapping("/reply/{replyNo}")
+	@DeleteMapping("/reply/{bno}/{replyNo}") 
 	@ResponseBody // 안쓰면 /reply/{replyNo}.jsp파일을 찾음
-	public void deleteReply(@PathVariable("replyNo") int replyNo) {
-		replyService.deleteReplyByNo(replyNo);
+	public void deleteReply(@PathVariable("bno") int boardNo,
+			@PathVariable("replyNo") int replyNo) {
+		
+		replyService.deleteReplyByNo(boardNo,replyNo);
 	}
 
 }

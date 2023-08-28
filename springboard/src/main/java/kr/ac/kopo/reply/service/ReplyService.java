@@ -10,6 +10,6 @@ public interface ReplyService {
 	
 	List<ReplyVO> getReplyBoardNo(int bno);
 	
-	void deleteReplyByNo(int replyNo);
+	void deleteReplyByNo(int boardNo, int replyNo);
 
 }

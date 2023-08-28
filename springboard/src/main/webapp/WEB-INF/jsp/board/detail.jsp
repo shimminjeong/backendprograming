@@ -39,7 +39,8 @@
 		$(document).on('click','.delBtn',function(){
 			let replyNo=$(this).attr('id');
 			$.ajax({
-				url : '${pageContext.request.contextPath}/reply/'+replyNo,
+				// reply/{bno}/{replyNo}
+				url : '${pageContext.request.contextPath}/reply/${boardVO.no}/'+replyNo,
 				method : 'delete',
 				success : function(){
 					alert('delete 성공')
@@ -127,7 +128,7 @@
 				<td>${boardVO.content}</td>
 			</tr>
 			<tr>
-				<th>조회수</th>
+				<th>댓글수</th>
 				<td>${boardVO.count}</td>
 			</tr>
 		</table>
