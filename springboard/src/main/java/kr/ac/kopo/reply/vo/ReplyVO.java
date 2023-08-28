@@ -3,7 +3,7 @@ package kr.ac.kopo.reply.vo;
 public class ReplyVO {
 
 	private int no;
-	private int boardNo;
+	private int bno;
 	private String writer;
 	private String content;
 	private String regDate;
@@ -16,12 +16,12 @@ public class ReplyVO {
 		this.no = no;
 	}
 
-	public int getBoardNo() {
-		return boardNo;
+	public int getBno() {
+		return bno;
 	}
 
-	public void setBoardNo(int boardNo) {
-		this.boardNo = boardNo;
+	public void setBno(int bno) {
+		this.bno = bno;
 	}
 
 	public String getWriter() {
@@ -50,8 +50,10 @@ public class ReplyVO {
 
 	@Override
 	public String toString() {
-		return "ReplyVO [no=" + no + ", boardNo=" + boardNo + ", writer=" + writer + ", content=" + content
-				+ ", regDate=" + regDate + "]";
+		return "ReplyVO [no=" + no + ", bno=" + bno + ", writer=" + writer + ", content=" + content + ", regDate="
+				+ regDate + "]";
 	}
+	
+	
 
 }

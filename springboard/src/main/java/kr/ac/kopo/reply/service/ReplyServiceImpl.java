@@ -1,5 +1,7 @@
 package kr.ac.kopo.reply.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,12 @@ public class ReplyServiceImpl implements ReplyService{
 	@Override
 	public void insertReply(ReplyVO replyVO) {
 		replyDAO.insertReply(replyVO);		
+	}
+
+	@Override
+	public List<ReplyVO> getReplyBoardNo(int bno) {
+		List<ReplyVO> replylist=replyDAO.getReplyBoardNo(bno);
+		return replylist;
 	}
 
 }

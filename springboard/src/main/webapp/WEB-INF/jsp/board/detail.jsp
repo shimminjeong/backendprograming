@@ -23,6 +23,8 @@
 				},
 				success : function(){
 					alert('insert성공')
+					document.replyForm.content.value="";
+					document.replyForm.writer.value="";
 				},
 				error : function(){
 					alert('insert실패')
