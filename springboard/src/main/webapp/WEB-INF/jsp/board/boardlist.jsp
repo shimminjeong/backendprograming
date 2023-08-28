@@ -23,8 +23,7 @@
 		<a href="${pageContext.request.contextPath}/logout">로그아웃</a>
 		<br>
 	</c:if>
-	전체게시판입니다
-	<br> ${boardlist}
+	<h1>전체게시판입니다</h1>
 	<div align="center">
 		<table border="1">
 			<tr>
@@ -32,7 +31,7 @@
 				<th>제목</th>
 				<th>지은이</th>
 				<th>작성일</th>
-				<th>조회수</th>
+				<th>댓글수</th>
 			</tr>
 			<c:forEach items="${boardlist}" var="board" varStatus="loop">
 				<tr>

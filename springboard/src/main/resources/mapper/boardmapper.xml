@@ -7,7 +7,8 @@
 	<!-- <resultMap type="BoardVO" id="boardMap"> <result column="reg_date" 
 		property="regDate" /> </resultMap> -->
 	<select id="selectAll" resultType="kr.ac.kopo.board.vo.BoardVO">
-		select * from t_board order by no desc
+		select * from t_board order by
+		no desc
 	</select>
 	<select id="selectbyNo" parameterType="int"
 		resultType="kr.ac.kopo.board.vo.BoardVO">
@@ -17,7 +18,15 @@
 	</select>
 
 	<insert id="insert" parameterType="kr.ac.kopo.board.vo.BoardVO">
-		insert into t_board(no,title,writer,content)
+		insert into
+		t_board(no,title,writer,content)
 		values(seq_t_board_no.nextval,#{title},#{writer},#{content})
 	</insert>
+
+	<update id="increaseCount" parameterType="int">
+		update t_board
+		set count=count+1
+		where no=#{no}
+
+	</update>
 </mapper>

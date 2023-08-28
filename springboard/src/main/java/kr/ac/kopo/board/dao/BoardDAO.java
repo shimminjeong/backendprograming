@@ -10,5 +10,7 @@ public interface BoardDAO {
 	BoardVO getPostByNo(int no);
 
 	void writeNewPost(BoardVO boardVO);
+	
+	void increaseCount(int no);
 
 }
