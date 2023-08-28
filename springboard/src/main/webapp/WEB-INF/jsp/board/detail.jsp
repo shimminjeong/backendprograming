@@ -43,6 +43,9 @@
 				method : 'delete',
 				success : function(){
 					alert('delete 성공')
+					//reload해주자
+					//replylist를 한번 더 불러줘
+					showReplyList();
 				},
 				error : function(){
 					alert('delete 실패')
