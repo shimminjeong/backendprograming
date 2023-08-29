@@ -3,6 +3,7 @@
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans   
     http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -11,7 +12,9 @@
     http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc.xsd
     http://www.springframework.org/schema/tx
-    http://www.springframework.org/schema/tx/spring-tx.xsd">
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task.xsd">
 
 	<context:component-scan
 		base-package="kr.ac.kopo" />
@@ -102,8 +105,17 @@
 	</bean>
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+	<!-- src/main/resource/locale/messages_kr.properties,messages_en.properties,messages_jp.properties 
+		(locale=kr) -->
 
-<!-- src/main/resource/locale/messages_kr.properties,messages_en.properties,messages_jp.properties (locale=kr) -->
+	<task:scheduled-tasks>
+		<task:scheduled ref="myScheduler" method="crontest"
+			cron="0/5 * * * * ?" />
+	</task:scheduled-tasks>
+
+<!-- crontest2 -->
+	<task:annotation-driven scheduler="scheduler" />
+	<task:scheduler id="scheduler" pool-size="10" />
 
 
 </beans>
