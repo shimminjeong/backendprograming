@@ -50,34 +50,60 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="configLocation"
 			value="classpath:config/mybatis/mybatis-config.xml"></property>
-			<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+		<property name="mapperLocations"
+			value="classpath:mapper/*.xml"></property>
 	</bean>
 
 	<bean id="sqlSessionTemplate"
 		class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory"></constructor-arg>
 	</bean>
-	
-	
+
+
 	<!-- interceptors설정 -->
 	<mvc:interceptors>
+
 		<mvc:interceptor>
-			<mvc:mapping path="/**/"/><!-- 모든파일 -->
-			<!-- <mvc:exclude-mapping path="/login"/>
-			<mvc:exclude-mapping path="/board"/> uri
-			<mvc:exclude-mapping path="/resources/**"/>
-			<ref bean="loginInterceptor"/> -->
-			<mvc:exclude-mapping path="/login"/>
-			<mvc:exclude-mapping path="/board"/>
-			<mvc:exclude-mapping path="/resource/**"/>
-			<ref bean="testInterceptor"/>
+			<mvc:mapping path="/**/" />
+			<bean id="localeChangeInterceptor"
+				class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+				<property name="paramName" value="locale" />
+				<!--다국어 locale값을 보내주는 param명입니다. http://localhost:8080/springboard/login?locale=en -->
+				<!--다국어 locale값을 보내주는 param명입니다. http://localhost:8080/springboard/login?language=en -->
+			</bean>
+		</mvc:interceptor>
+
+		<mvc:interceptor>
+			<mvc:mapping path="/**/" /><!-- 모든파일 -->
+			<!-- <mvc:exclude-mapping path="/login"/> <mvc:exclude-mapping path="/board"/> 
+				uri <mvc:exclude-mapping path="/resources/**"/> <ref bean="loginInterceptor"/> -->
+			<mvc:exclude-mapping path="/login" />
+			<mvc:exclude-mapping path="/board" />
+			<mvc:exclude-mapping path="/resource/**" />
+			<ref bean="testInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
-	
-	<tx:annotation-driven transaction-manager="transactionManager" />
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"></property>
-    </bean>
+
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>locale.messages</value>
+			</list>
+		</property>
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+
+<!-- src/main/resource/locale/messages_kr.properties,messages_en.properties,messages_jp.properties (locale=kr) -->
 
 
 </beans>
